@@ -1,7 +1,7 @@
 import os
 
-from flask import Flask
-
+from flask import (Flask, g)
+from . import BJGame
 
 def create_app(test_config=None):
     # create and configure the app
@@ -23,6 +23,12 @@ def create_app(test_config=None):
         os.makedirs(app.instance_path)
     except OSError:
         pass
+    
+    @app.before_request
+    def before_request():
+        if !(g.game):
+            g.game = BJGame.BlackJack()
+        
     from . import start
     app.register_blueprint(start.bp)
 
