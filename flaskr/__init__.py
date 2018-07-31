@@ -26,7 +26,8 @@ def create_app(test_config=None):
     
     @app.before_request
     def before_request():
-        g.game = BJGame.BlackJack()
+        if !(g.game):
+            g.game = BJGame.BlackJack()
         
     from . import start
     app.register_blueprint(start.bp)
