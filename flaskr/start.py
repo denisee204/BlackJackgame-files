@@ -4,11 +4,9 @@ from flask import (
 from werkzeug.exceptions import abort
 bp= Blueprint('start', __name__)
 
-from . import BJGame
 
 @bp.route('/start')
 def blackJackStart():
-    g.game=BJGame.BlackJack()
     images=g.game.deal2()
     pics= g.game.deal2dealer()
     if g.game.winWith2()== True:
