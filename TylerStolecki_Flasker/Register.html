@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>Black Jack</title>
+        <link rel="stylesheet" type="text/css" href="static/registercss.css"/>    
+  </head>
+
+  <body>
+    <div class="box">
+      <h1>Register</h1>
+      <br>
+      <form action="" method="post">
+        <label>First Name:</label>
+        <label><input type="text" placeholder="First Name" name="" value="{{request.form.username }}"><br></label>
+        <br>
+
+        <label>Last Name:</label>
+        <label><input type="password" placeholder="Last Name" name="" value="{{request.form.password }}"></label><br>
+        <br>
+
+        <label>Email:</label>
+        <label><input type="password" placeholder="Email" name="" value="{{request.form.password }}"></label><br>
+        <br>
+
+        <label>Username:</label>
+        <label><input type="password" placeholder="Username" name="" value="{{request.form.password }}"></label><br>
+        <br>
+
+        <label>Password:</label>
+        <label><input type="password" placeholder="Password" name="password" value="{{request.form.password }}"></label><br>
+        <br>
+        <input type="button" value="<<Back" onclick="window.location.href='http://127.0.0.1:5000/'" />
+        <br>
+        <input class="btn btn-default" type="submit" value="submit">
+        <br>
+
+
+      </form>
+      <br>
+
+      {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}
+    </div>
+  </body>
+</html>

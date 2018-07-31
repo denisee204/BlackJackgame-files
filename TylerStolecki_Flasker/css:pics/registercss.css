@@ -1,0 +1,39 @@
+body{
+background: url("fallingcards2.gif") ;
+background-repeat: repeat;
+background-size: 100%;
+padding: 50;
+margin: 50;
+}
+
+.box{
+    width: 320px;
+    height: 620px;
+    background: rgba(192, 192, 192, .8);
+    color: black;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 40px;
+}
+
+input{
+  margin:.25em auto .25em auto;
+}
+input:focus{
+  box-shadow:1px 1px 2px #7A7A7A;
+}
+
+label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 250px;
+    text-align: left;
+}
+input {
+  display: inline-block;
+  float: left;
+}
