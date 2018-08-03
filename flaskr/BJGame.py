@@ -177,6 +177,7 @@ class BlackJack :
             for card in self.player:
                 strings.append(card.rankSuittoString())
             return strings
+            
 
         else:
             self.show('===Game Over===')
@@ -192,16 +193,19 @@ class BlackJack :
     def playerChoice(self):
         'Asks user to choose to stand or take a hit and takes action. Detects end of game.'
         strings=[]
-        # for card in self.player:
-        #     strings.append(card.rankSuittoString())
+        for card in self.player:
+            strings.append(card.rankSuittoString())
+            return strings
         self.deal1(self.player)
         for card in self.player:
             strings.append(card.rankSuittoString())
             return strings
         if self.player.evalhd()>21:
-            self.status == dealerwin
+            self.status == self.dealerWon
         if self.status == self.endGame:
-                return
+            return
+
+
     def playerstand(self):
         if self.status == self.endGame:
             return

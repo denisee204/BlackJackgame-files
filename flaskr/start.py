@@ -25,25 +25,26 @@ def blackJackStart():
 
 @bp.route('/choice', methods=(['GET']))
 def choice():
-    playerhand=blackJackStart()
     if g.game.winWith2()== False and g.game.winWith2Dealer()==False:
         g.game.playerChoice()
         playerhit= g.game.playerChoice()
-        images = playerhand + playerhit
+        images = playerhit
         if request.method == 'GET':
             for i in images:
                 print(i)
             return render_template('game/choice.html', images=images)
-    else:
-        blackJack.dealerStrategy()
-    for i in images:
-        print(i)
-    return render_template('game/choice.html', images=images)
+    # else:
+    #     g.game.dealerStrategy()
+    # for i in images:
+    #     print(i)
+    # return render_template('game/choice.html', images=images)
 @bp.route('/stand', methods=(['GET']))
 def stand():
-    if blackJack.winWith2()== False and g.game.winWith2Dealer()==False:
-        if request.method == 'GET':
+    if g.game.winWith2()== False and g.game.winWith2Dealer()==False:
 
+        if request.method == 'GET':
             for i in images:
                 print(i)
+        else:
+            g.game.dealerStrategy()
             return render_template('game/stand.html', images=images)
