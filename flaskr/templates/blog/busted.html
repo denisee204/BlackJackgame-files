@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<title>Choice</title>
+{% block header %}
+  <h1>{% block title %}Black Jack{% endblock %}</h1>
+  <p> You Busted</p>
+{% endblock %}
+
+{% block content %}
+  {% for image in images %}
+      <div>
+        <img src= "{{ url_for('static', filename = images[]) }}" >
+      </div>
+  {% endfor %}
+
+    <a class="action" href="{{ url_for('blog.index') }}"> <H2>New Hand</H2></a>
+{% endblock %}
+
+
+</html>

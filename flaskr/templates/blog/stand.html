@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+<title>Stand</title>
+</head>
+<body>
+  <h1>Black Jack</h1>
+  <p> Player took no more cards</p>
+  {% for image in images %}
+      <div>
+        <img src= "{{ url_for('static', filename = image) }}" >
+      </div>
+  {% endfor %}
+  <a class="action" href="{{ url_for('blog.dealer') }}"> <H1>Continue</H1></a>
+</body>
+</html>

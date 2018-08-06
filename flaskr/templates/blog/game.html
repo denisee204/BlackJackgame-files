@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  
+{% endblock %}
+{% block content %}
+  {% for image in images %}
+      <div>
+        <img src= "{{ url_for('static', filename = image)}}">
+      </div>
+      {% endfor %}
+  <a class="action" href="{{ url_for('blog.choice') }}"> <H1>Hit</H1></a>
+  <a class="action" href="{{ url_for('blog.stand') }}"> <H1>Stand</H1></a>
+{% endblock %}
